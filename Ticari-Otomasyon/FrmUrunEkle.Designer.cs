@@ -95,6 +95,7 @@
             this.txtSatisFiyat.Name = "txtSatisFiyat";
             this.txtSatisFiyat.Size = new System.Drawing.Size(217, 20);
             this.txtSatisFiyat.TabIndex = 6;
+            this.txtSatisFiyat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSatisFiyat_KeyPress);
             // 
             // labelControl7
             // 
@@ -110,6 +111,8 @@
             this.txtAlisFiyat.Name = "txtAlisFiyat";
             this.txtAlisFiyat.Size = new System.Drawing.Size(217, 20);
             this.txtAlisFiyat.TabIndex = 5;
+            this.txtAlisFiyat.EditValueChanged += new System.EventHandler(this.txtAlisFiyat_EditValueChanged_1);
+            this.txtAlisFiyat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAlisFiyat_KeyPress);
             // 
             // labelControl6
             // 

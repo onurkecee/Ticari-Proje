@@ -60,7 +60,27 @@ namespace Ticari_Otomasyon
 
         private void FrmUrunEkle_Load(object sender, EventArgs e)
         {
+            //
+        }
 
+        private void txtAlisFiyat_EditValueChanged(object sender, EventArgs e)
+        {
+            //
+        }
+
+        private void txtAlisFiyat_EditValueChanged_1(object sender, EventArgs e)
+        {
+            //
+        }
+
+        private void txtAlisFiyat_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ',';
+        }
+
+        private void txtSatisFiyat_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ',';
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Xml;
 
 namespace Ticari_Otomasyon
 {
@@ -50,7 +51,45 @@ namespace Ticari_Otomasyon
             SqlDataAdapter adap = new SqlDataAdapter("select AD, TELEFON1 from TBLFIRMALAR", baglan.baglanti());
             adap.Fill(dt);
             gridFirma.DataSource = dt;
-            
+
+        }
+
+        public void DovizKurları()
+        {
+            XmlDocument xmlVerisi = new XmlDocument();
+            xmlVerisi.Load("http://www.tcmb.gov.tr/kurlar/today.xml");
+
+            decimal dolar = Convert.ToDecimal(xmlVerisi.SelectSingleNode(string.Format("Tarih_Date/Currency[@Kod='{0}']/ForexSelling", "USD")).InnerText.Replace('.', ','));
+            decimal euro = Convert.ToDecimal(xmlVerisi.SelectSingleNode(string.Format("Tarih_Date/Currency[@Kod='{0}']/ForexSelling", "EUR")).InnerText.Replace('.', ','));
+            decimal sterlin = Convert.ToDecimal(xmlVerisi.SelectSingleNode(string.Format("Tarih_Date/Currency[@Kod='{0}']/ForexSelling", "GBP")).InnerText.Replace('.', ','));
+            decimal frank = Convert.ToDecimal(xmlVerisi.SelectSingleNode(string.Format("Tarih_Date/Currency[@Kod='{0}']/ForexSelling", "CHF")).InnerText.Replace('.', ','));
+            decimal ruble = Convert.ToDecimal(xmlVerisi.SelectSingleNode(string.Format("Tarih_Date/Currency[@Kod='{0}']/ForexSelling", "RUB")).InnerText.Replace('.', ','));
+            decimal yuan = Convert.ToDecimal(xmlVerisi.SelectSingleNode(string.Format("Tarih_Date/Currency[@Kod='{0}']/ForexSelling", "CNY")).InnerText.Replace('.', ','));
+            decimal dinar = Convert.ToDecimal(xmlVerisi.SelectSingleNode(string.Format("Tarih_Date/Currency[@Kod='{0}']/ForexSelling", "KWD")).InnerText.Replace('.', ','));
+            decimal kron = Convert.ToDecimal(xmlVerisi.SelectSingleNode(string.Format("Tarih_Date/Currency[@Kod='{0}']/ForexSelling", "NOK")).InnerText.Replace('.', ','));
+
+
+            lblDolar.Text = dolar.ToString();
+            lblEuro.Text = euro.ToString();
+            lblSterlin.Text = sterlin.ToString();
+            lblFrank.Text = frank.ToString();
+            lblRuble.Text = ruble.ToString();
+            lblYuan.Text = yuan.ToString();
+            lblDinar.Text = dinar.ToString();
+            lblKron.Text = kron.ToString();
+        }
+
+        public void HaberBasliklari()
+        {
+            XmlTextReader xmloku = new XmlTextReader("https://www.hurriyet.com.tr/rss/anasayfa");
+            while (xmloku.Read())
+            {
+                if (xmloku.Name == "title")
+                {
+                    listBox1.Items.Add(xmloku.ReadString());
+                }
+            }
+
         }
 
         private void FrmAna_Load(object sender, EventArgs e)
@@ -59,6 +98,8 @@ namespace Ticari_Otomasyon
             Ajanda();
             FirmaHareket();
             Fihrist();
+            DovizKurları();
+            HaberBasliklari();
         }
     }
 }

@@ -143,5 +143,16 @@ namespace Ticari_Otomasyon
         {
             UrunGuncelle();
         }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            FrmUrunDetay urundetay = new FrmUrunDetay();
+            DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+            if (dr!=null)
+            {
+                urundetay.id = dr["ID"].ToString();
+            }
+            urundetay.Show();
+        }
     }
 }

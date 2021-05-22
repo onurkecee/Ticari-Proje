@@ -44,8 +44,29 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.gridStok = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblDolar = new System.Windows.Forms.Label();
+            this.lblEuro = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblSterlin = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblFrank = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblRuble = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lblYuan = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblDinar = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.lblKron = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
+            this.xtraTabPage1.SuspendLayout();
+            this.xtraTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridFirma)).BeginInit();
@@ -62,6 +83,7 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridStok)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // xtraTabControl1
@@ -77,6 +99,23 @@
             // 
             // xtraTabPage1
             // 
+            this.xtraTabPage1.Controls.Add(this.pictureBox1);
+            this.xtraTabPage1.Controls.Add(this.lblKron);
+            this.xtraTabPage1.Controls.Add(this.label16);
+            this.xtraTabPage1.Controls.Add(this.lblDinar);
+            this.xtraTabPage1.Controls.Add(this.label14);
+            this.xtraTabPage1.Controls.Add(this.lblYuan);
+            this.xtraTabPage1.Controls.Add(this.label12);
+            this.xtraTabPage1.Controls.Add(this.lblRuble);
+            this.xtraTabPage1.Controls.Add(this.label10);
+            this.xtraTabPage1.Controls.Add(this.lblFrank);
+            this.xtraTabPage1.Controls.Add(this.label8);
+            this.xtraTabPage1.Controls.Add(this.lblSterlin);
+            this.xtraTabPage1.Controls.Add(this.label6);
+            this.xtraTabPage1.Controls.Add(this.lblEuro);
+            this.xtraTabPage1.Controls.Add(this.label4);
+            this.xtraTabPage1.Controls.Add(this.lblDolar);
+            this.xtraTabPage1.Controls.Add(this.label1);
             this.xtraTabPage1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPage1.ImageOptions.Image")));
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Size = new System.Drawing.Size(431, 538);
@@ -84,9 +123,11 @@
             // 
             // xtraTabPage2
             // 
+            this.xtraTabPage2.Controls.Add(this.label2);
+            this.xtraTabPage2.Controls.Add(this.listBox1);
             this.xtraTabPage2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPage2.ImageOptions.Image")));
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(431, 578);
+            this.xtraTabPage2.Size = new System.Drawing.Size(431, 538);
             this.xtraTabPage2.Text = "Haberler";
             // 
             // groupControl4
@@ -201,6 +242,203 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(37, 313);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Dolar:";
+            // 
+            // lblDolar
+            // 
+            this.lblDolar.AutoSize = true;
+            this.lblDolar.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblDolar.ForeColor = System.Drawing.Color.Red;
+            this.lblDolar.Location = new System.Drawing.Point(134, 313);
+            this.lblDolar.Name = "lblDolar";
+            this.lblDolar.Size = new System.Drawing.Size(21, 13);
+            this.lblDolar.TabIndex = 1;
+            this.lblDolar.Text = "00";
+            // 
+            // lblEuro
+            // 
+            this.lblEuro.AutoSize = true;
+            this.lblEuro.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblEuro.ForeColor = System.Drawing.Color.Red;
+            this.lblEuro.Location = new System.Drawing.Point(134, 361);
+            this.lblEuro.Name = "lblEuro";
+            this.lblEuro.Size = new System.Drawing.Size(21, 13);
+            this.lblEuro.TabIndex = 3;
+            this.lblEuro.Text = "00";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(37, 361);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Euro:";
+            // 
+            // lblSterlin
+            // 
+            this.lblSterlin.AutoSize = true;
+            this.lblSterlin.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblSterlin.ForeColor = System.Drawing.Color.Red;
+            this.lblSterlin.Location = new System.Drawing.Point(134, 407);
+            this.lblSterlin.Name = "lblSterlin";
+            this.lblSterlin.Size = new System.Drawing.Size(21, 13);
+            this.lblSterlin.TabIndex = 5;
+            this.lblSterlin.Text = "00";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(37, 407);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 13);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Sterlin:";
+            // 
+            // lblFrank
+            // 
+            this.lblFrank.AutoSize = true;
+            this.lblFrank.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblFrank.ForeColor = System.Drawing.Color.Red;
+            this.lblFrank.Location = new System.Drawing.Point(134, 454);
+            this.lblFrank.Name = "lblFrank";
+            this.lblFrank.Size = new System.Drawing.Size(21, 13);
+            this.lblFrank.TabIndex = 7;
+            this.lblFrank.Text = "00";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(37, 454);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(87, 13);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "İsviçre Frangı:";
+            // 
+            // lblRuble
+            // 
+            this.lblRuble.AutoSize = true;
+            this.lblRuble.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblRuble.ForeColor = System.Drawing.Color.Red;
+            this.lblRuble.Location = new System.Drawing.Point(359, 313);
+            this.lblRuble.Name = "lblRuble";
+            this.lblRuble.Size = new System.Drawing.Size(21, 13);
+            this.lblRuble.TabIndex = 9;
+            this.lblRuble.Text = "00";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label10.Location = new System.Drawing.Point(253, 313);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(75, 13);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Rus Rublesi:";
+            // 
+            // lblYuan
+            // 
+            this.lblYuan.AutoSize = true;
+            this.lblYuan.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblYuan.ForeColor = System.Drawing.Color.Red;
+            this.lblYuan.Location = new System.Drawing.Point(359, 360);
+            this.lblYuan.Name = "lblYuan";
+            this.lblYuan.Size = new System.Drawing.Size(21, 13);
+            this.lblYuan.TabIndex = 11;
+            this.lblYuan.Text = "00";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label12.Location = new System.Drawing.Point(253, 360);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(61, 13);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "Çin Yuanı:";
+            // 
+            // lblDinar
+            // 
+            this.lblDinar.AutoSize = true;
+            this.lblDinar.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblDinar.ForeColor = System.Drawing.Color.Red;
+            this.lblDinar.Location = new System.Drawing.Point(359, 407);
+            this.lblDinar.Name = "lblDinar";
+            this.lblDinar.Size = new System.Drawing.Size(21, 13);
+            this.lblDinar.TabIndex = 13;
+            this.lblDinar.Text = "00";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label14.Location = new System.Drawing.Point(253, 407);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(86, 13);
+            this.label14.TabIndex = 12;
+            this.label14.Text = "Kuveyt Dinarı:";
+            // 
+            // lblKron
+            // 
+            this.lblKron.AutoSize = true;
+            this.lblKron.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblKron.ForeColor = System.Drawing.Color.Red;
+            this.lblKron.Location = new System.Drawing.Point(359, 460);
+            this.lblKron.Name = "lblKron";
+            this.lblKron.Size = new System.Drawing.Size(21, 13);
+            this.lblKron.TabIndex = 15;
+            this.lblKron.Text = "00";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label16.Location = new System.Drawing.Point(253, 460);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(85, 13);
+            this.label16.TabIndex = 14;
+            this.label16.Text = "Norveç Kronu:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Ticari_Otomasyon.Properties.Resources.gider;
+            this.pictureBox1.Location = new System.Drawing.Point(40, 28);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(338, 219);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(-1, 29);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(433, 511);
+            this.listBox1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(4, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(137, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Günlük Haber Başlıkları";
+            // 
             // FrmAna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -216,6 +454,10 @@
             this.Load += new System.EventHandler(this.FrmAna_Load);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
+            this.xtraTabPage1.ResumeLayout(false);
+            this.xtraTabPage1.PerformLayout();
+            this.xtraTabPage2.ResumeLayout(false);
+            this.xtraTabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridFirma)).EndInit();
@@ -232,6 +474,7 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridStok)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -253,5 +496,24 @@
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraGrid.GridControl gridStok;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.Label lblKron;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblDinar;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lblYuan;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblRuble;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblFrank;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblSterlin;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblEuro;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblDolar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
