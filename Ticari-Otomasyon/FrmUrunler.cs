@@ -97,9 +97,67 @@ namespace Ticari_Otomasyon
             }
         }
 
+        public void UrunArama()
+        {
+            if (radioMarkaArama.Checked == true)
+            {
+                try
+                {
+                    SqlCommand markaara = new SqlCommand("select * from TBLURUNLER where MARKA like '%" + txtUrunAra.Text + "%'", baglan.baglanti());
+                    SqlDataAdapter adap = new SqlDataAdapter(markaara);
+                    DataTable dt = new DataTable();
+                    adap.Fill(dt);
+                    gridControl1.DataSource = dt;
+                    baglan.baglanti().Close();
+                }
+                catch (SqlException ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            if (radiaModelArama.Checked == true)
+            {
+                try
+                {
+                    SqlCommand modelara = new SqlCommand("select * from TBLURUNLER where MODEL like '%" + txtUrunAra.Text + "%'", baglan.baglanti());
+                    SqlDataAdapter adap = new SqlDataAdapter(modelara);
+                    DataTable dt = new DataTable();
+                    adap.Fill(dt);
+                    gridControl1.DataSource = dt;
+                    baglan.baglanti().Close();
+                }
+                catch (SqlException ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        public void ToplamUrunSayisi()
+        {
+            try
+            {
+                SqlCommand toplamurun = new SqlCommand("select sum(ADET) from TBLURUNLER", baglan.baglanti());
+                SqlDataReader dr = toplamurun.ExecuteReader();
+                while (dr.Read())
+                {
+                    lblToplamUrun.Text = dr[0].ToString();
+                }
+            }
+            catch (SqlException ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
         private void FrmUrunler_Load(object sender, EventArgs e)
         {
             UrunListele();
+            ToplamUrunSayisi();
         }
 
         FrmUrunEkle urunekle;
@@ -126,16 +184,25 @@ namespace Ticari_Otomasyon
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            DataRow data = gridView1.GetDataRow(gridView1.FocusedRowHandle);
-            txtUrunID.Text = data["ID"].ToString();
-            txtUrunAdi.Text = data["URUNAD"].ToString();
-            txtMarka.Text = data["MARKA"].ToString();
-            txtModel.Text = data["MODEL"].ToString();
-            txtYil.Text = data["YIL"].ToString();
-            txtAdet.Text = data["ADET"].ToString();
-            txtAlisFiyat.Text = data["ALISFIYAT"].ToString();
-            txtSatisFiyat.Text = data["SATISFIYAT"].ToString();
-            txtDetay.Text = data["DETAY"].ToString();
+            try
+            {
+                DataRow data = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+                txtUrunID.Text = data["ID"].ToString();
+                txtUrunAdi.Text = data["URUNAD"].ToString();
+                txtMarka.Text = data["MARKA"].ToString();
+                txtModel.Text = data["MODEL"].ToString();
+                txtYil.Text = data["YIL"].ToString();
+                txtAdet.Text = data["ADET"].ToString();
+                txtAlisFiyat.Text = data["ALISFIYAT"].ToString();
+                txtSatisFiyat.Text = data["SATISFIYAT"].ToString();
+                txtDetay.Text = data["DETAY"].ToString();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Böyle Bir Ürün Yok");
+            }
+
 
         }
 
@@ -148,11 +215,16 @@ namespace Ticari_Otomasyon
         {
             FrmUrunDetay urundetay = new FrmUrunDetay();
             DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
-            if (dr!=null)
+            if (dr != null)
             {
                 urundetay.id = dr["ID"].ToString();
             }
             urundetay.Show();
+        }
+
+        private void btnAra_Click(object sender, EventArgs e)
+        {
+            UrunArama();
         }
     }
 }

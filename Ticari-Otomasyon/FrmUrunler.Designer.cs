@@ -53,6 +53,13 @@
             this.txtYil = new System.Windows.Forms.MaskedTextBox();
             this.txtUrunAdi = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.txtUrunAra = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.btnAra = new DevExpress.XtraEditors.SimpleButton();
+            this.radioMarkaArama = new System.Windows.Forms.RadioButton();
+            this.radiaModelArama = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblToplamUrun = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -64,14 +71,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtModel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMarka.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUrunAdi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUrunAra.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
+            this.gridControl1.Location = new System.Drawing.Point(0, 61);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1024, 738);
+            this.gridControl1.Size = new System.Drawing.Size(1024, 677);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -117,7 +125,7 @@
             // 
             // txtAdet
             // 
-            this.txtAdet.Location = new System.Drawing.Point(94, 160);
+            this.txtAdet.Location = new System.Drawing.Point(94, 166);
             this.txtAdet.Name = "txtAdet";
             this.txtAdet.Size = new System.Drawing.Size(217, 21);
             this.txtAdet.TabIndex = 5;
@@ -125,14 +133,14 @@
             // txtUrunID
             // 
             this.txtUrunID.Enabled = false;
-            this.txtUrunID.Location = new System.Drawing.Point(94, 28);
+            this.txtUrunID.Location = new System.Drawing.Point(94, 34);
             this.txtUrunID.Name = "txtUrunID";
             this.txtUrunID.Size = new System.Drawing.Size(217, 20);
             this.txtUrunID.TabIndex = 0;
             // 
             // lblid
             // 
-            this.lblid.Location = new System.Drawing.Point(6, 31);
+            this.lblid.Location = new System.Drawing.Point(6, 37);
             this.lblid.Name = "lblid";
             this.lblid.Size = new System.Drawing.Size(15, 13);
             this.lblid.TabIndex = 19;
@@ -141,7 +149,7 @@
             // btnGuncelle
             // 
             this.btnGuncelle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuncelle.ImageOptions.Image")));
-            this.btnGuncelle.Location = new System.Drawing.Point(113, 360);
+            this.btnGuncelle.Location = new System.Drawing.Point(113, 366);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(90, 41);
             this.btnGuncelle.TabIndex = 10;
@@ -151,7 +159,7 @@
             // btnSil
             // 
             this.btnSil.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSil.ImageOptions.Image")));
-            this.btnSil.Location = new System.Drawing.Point(209, 360);
+            this.btnSil.Location = new System.Drawing.Point(209, 366);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(90, 41);
             this.btnSil.TabIndex = 11;
@@ -161,7 +169,7 @@
             // btnUrunEkle
             // 
             this.btnUrunEkle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUrunEkle.ImageOptions.Image")));
-            this.btnUrunEkle.Location = new System.Drawing.Point(17, 360);
+            this.btnUrunEkle.Location = new System.Drawing.Point(17, 366);
             this.btnUrunEkle.Name = "btnUrunEkle";
             this.btnUrunEkle.Size = new System.Drawing.Size(90, 41);
             this.btnUrunEkle.TabIndex = 9;
@@ -170,7 +178,7 @@
             // 
             // txtDetay
             // 
-            this.txtDetay.Location = new System.Drawing.Point(94, 239);
+            this.txtDetay.Location = new System.Drawing.Point(94, 245);
             this.txtDetay.Name = "txtDetay";
             this.txtDetay.Size = new System.Drawing.Size(217, 96);
             this.txtDetay.TabIndex = 8;
@@ -178,7 +186,7 @@
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(6, 242);
+            this.labelControl8.Location = new System.Drawing.Point(6, 248);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(33, 13);
             this.labelControl8.TabIndex = 14;
@@ -186,14 +194,14 @@
             // 
             // txtSatisFiyat
             // 
-            this.txtSatisFiyat.Location = new System.Drawing.Point(94, 213);
+            this.txtSatisFiyat.Location = new System.Drawing.Point(94, 219);
             this.txtSatisFiyat.Name = "txtSatisFiyat";
             this.txtSatisFiyat.Size = new System.Drawing.Size(217, 20);
             this.txtSatisFiyat.TabIndex = 7;
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(6, 216);
+            this.labelControl7.Location = new System.Drawing.Point(6, 222);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(54, 13);
             this.labelControl7.TabIndex = 12;
@@ -201,14 +209,14 @@
             // 
             // txtAlisFiyat
             // 
-            this.txtAlisFiyat.Location = new System.Drawing.Point(94, 187);
+            this.txtAlisFiyat.Location = new System.Drawing.Point(94, 193);
             this.txtAlisFiyat.Name = "txtAlisFiyat";
             this.txtAlisFiyat.Size = new System.Drawing.Size(217, 20);
             this.txtAlisFiyat.TabIndex = 6;
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(6, 190);
+            this.labelControl6.Location = new System.Drawing.Point(6, 196);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(47, 13);
             this.labelControl6.TabIndex = 10;
@@ -216,7 +224,7 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(6, 162);
+            this.labelControl5.Location = new System.Drawing.Point(6, 168);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(27, 13);
             this.labelControl5.TabIndex = 9;
@@ -224,7 +232,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(6, 135);
+            this.labelControl4.Location = new System.Drawing.Point(6, 141);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(14, 13);
             this.labelControl4.TabIndex = 7;
@@ -232,14 +240,14 @@
             // 
             // txtModel
             // 
-            this.txtModel.Location = new System.Drawing.Point(94, 106);
+            this.txtModel.Location = new System.Drawing.Point(94, 112);
             this.txtModel.Name = "txtModel";
             this.txtModel.Size = new System.Drawing.Size(217, 20);
             this.txtModel.TabIndex = 3;
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(6, 109);
+            this.labelControl3.Location = new System.Drawing.Point(6, 115);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(32, 13);
             this.labelControl3.TabIndex = 5;
@@ -247,14 +255,14 @@
             // 
             // txtMarka
             // 
-            this.txtMarka.Location = new System.Drawing.Point(94, 80);
+            this.txtMarka.Location = new System.Drawing.Point(94, 86);
             this.txtMarka.Name = "txtMarka";
             this.txtMarka.Size = new System.Drawing.Size(217, 20);
             this.txtMarka.TabIndex = 2;
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(6, 83);
+            this.labelControl2.Location = new System.Drawing.Point(6, 89);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(33, 13);
             this.labelControl2.TabIndex = 3;
@@ -262,7 +270,7 @@
             // 
             // txtYil
             // 
-            this.txtYil.Location = new System.Drawing.Point(94, 132);
+            this.txtYil.Location = new System.Drawing.Point(94, 138);
             this.txtYil.Mask = "0000";
             this.txtYil.Name = "txtYil";
             this.txtYil.Size = new System.Drawing.Size(217, 21);
@@ -271,25 +279,100 @@
             // 
             // txtUrunAdi
             // 
-            this.txtUrunAdi.Location = new System.Drawing.Point(94, 54);
+            this.txtUrunAdi.Location = new System.Drawing.Point(94, 60);
             this.txtUrunAdi.Name = "txtUrunAdi";
             this.txtUrunAdi.Size = new System.Drawing.Size(217, 20);
             this.txtUrunAdi.TabIndex = 1;
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(6, 57);
+            this.labelControl1.Location = new System.Drawing.Point(6, 63);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(45, 13);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Ürün Adı:";
+            // 
+            // txtUrunAra
+            // 
+            this.txtUrunAra.Location = new System.Drawing.Point(197, 22);
+            this.txtUrunAra.Name = "txtUrunAra";
+            this.txtUrunAra.Size = new System.Drawing.Size(158, 20);
+            this.txtUrunAra.TabIndex = 20;
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Location = new System.Drawing.Point(144, 25);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(47, 13);
+            this.labelControl9.TabIndex = 21;
+            this.labelControl9.Text = "Ürün Ara:";
+            // 
+            // btnAra
+            // 
+            this.btnAra.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAra.ImageOptions.Image")));
+            this.btnAra.Location = new System.Drawing.Point(361, 22);
+            this.btnAra.Name = "btnAra";
+            this.btnAra.Size = new System.Drawing.Size(53, 20);
+            this.btnAra.TabIndex = 22;
+            this.btnAra.Text = "Ara";
+            this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
+            // 
+            // radioMarkaArama
+            // 
+            this.radioMarkaArama.AutoSize = true;
+            this.radioMarkaArama.Location = new System.Drawing.Point(12, 12);
+            this.radioMarkaArama.Name = "radioMarkaArama";
+            this.radioMarkaArama.Size = new System.Drawing.Size(125, 17);
+            this.radioMarkaArama.TabIndex = 23;
+            this.radioMarkaArama.TabStop = true;
+            this.radioMarkaArama.Text = "Markaya Göre Arama";
+            this.radioMarkaArama.UseVisualStyleBackColor = true;
+            // 
+            // radiaModelArama
+            // 
+            this.radiaModelArama.AutoSize = true;
+            this.radiaModelArama.Location = new System.Drawing.Point(12, 35);
+            this.radiaModelArama.Name = "radiaModelArama";
+            this.radiaModelArama.Size = new System.Drawing.Size(119, 17);
+            this.radiaModelArama.TabIndex = 24;
+            this.radiaModelArama.TabStop = true;
+            this.radiaModelArama.Text = "Modele Göre Arama";
+            this.radiaModelArama.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(858, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(120, 13);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Toplam Ürün Sayısı:";
+            // 
+            // lblToplamUrun
+            // 
+            this.lblToplamUrun.AutoSize = true;
+            this.lblToplamUrun.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblToplamUrun.ForeColor = System.Drawing.Color.Red;
+            this.lblToplamUrun.Location = new System.Drawing.Point(978, 9);
+            this.lblToplamUrun.Name = "lblToplamUrun";
+            this.lblToplamUrun.Size = new System.Drawing.Size(21, 13);
+            this.lblToplamUrun.TabIndex = 26;
+            this.lblToplamUrun.Text = "00";
             // 
             // FrmUrunler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1347, 735);
+            this.Controls.Add(this.lblToplamUrun);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnAra);
+            this.Controls.Add(this.radiaModelArama);
+            this.Controls.Add(this.txtUrunAra);
+            this.Controls.Add(this.labelControl9);
             this.Controls.Add(this.groupControl1);
+            this.Controls.Add(this.radioMarkaArama);
             this.Controls.Add(this.gridControl1);
             this.Name = "FrmUrunler";
             this.Text = "ÜRÜNLER";
@@ -306,7 +389,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtModel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMarka.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUrunAdi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUrunAra.Properties)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -336,5 +421,12 @@
         private DevExpress.XtraEditors.LabelControl lblid;
         private System.Windows.Forms.MaskedTextBox txtYil;
         private System.Windows.Forms.NumericUpDown txtAdet;
+        private DevExpress.XtraEditors.SimpleButton btnAra;
+        private DevExpress.XtraEditors.TextEdit txtUrunAra;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private System.Windows.Forms.RadioButton radiaModelArama;
+        private System.Windows.Forms.RadioButton radioMarkaArama;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblToplamUrun;
     }
 }

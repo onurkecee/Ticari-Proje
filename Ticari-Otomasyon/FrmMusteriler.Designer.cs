@@ -43,20 +43,20 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.cmbilce = new DevExpress.XtraEditors.ComboBoxEdit();
             this.cmbil = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.txtTcKimlik = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelefon2 = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelefon = new System.Windows.Forms.MaskedTextBox();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            this.txtTelefon2 = new System.Windows.Forms.MaskedTextBox();
-            this.txtTcKimlik = new System.Windows.Forms.MaskedTextBox();
-            this.txtVergiDairesi = new DevExpress.XtraEditors.TextEdit();
             this.txtMail = new DevExpress.XtraEditors.TextEdit();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.txtVergiDairesi = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.txtTelefon = new System.Windows.Forms.MaskedTextBox();
             this.txtSoyad = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -65,8 +65,8 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbilce.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbil.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtVergiDairesi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMail.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtVergiDairesi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoyad.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -134,6 +134,9 @@
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.gridView1.Appearance.Row.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gridView1.Appearance.Row.Options.UseBackColor = true;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.HorzScrollStep = 1;
             this.gridView1.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
@@ -218,6 +221,31 @@
             this.cmbil.TabIndex = 8;
             this.cmbil.SelectedIndexChanged += new System.EventHandler(this.cmbil_SelectedIndexChanged);
             // 
+            // txtTcKimlik
+            // 
+            this.txtTcKimlik.Location = new System.Drawing.Point(94, 158);
+            this.txtTcKimlik.Mask = "00000000000";
+            this.txtTcKimlik.Name = "txtTcKimlik";
+            this.txtTcKimlik.Size = new System.Drawing.Size(217, 21);
+            this.txtTcKimlik.TabIndex = 5;
+            this.txtTcKimlik.ValidatingType = typeof(int);
+            // 
+            // txtTelefon2
+            // 
+            this.txtTelefon2.Location = new System.Drawing.Point(94, 132);
+            this.txtTelefon2.Mask = "(999) 000-0000";
+            this.txtTelefon2.Name = "txtTelefon2";
+            this.txtTelefon2.Size = new System.Drawing.Size(217, 21);
+            this.txtTelefon2.TabIndex = 4;
+            // 
+            // txtTelefon
+            // 
+            this.txtTelefon.Location = new System.Drawing.Point(94, 106);
+            this.txtTelefon.Mask = "(999) 000-0000";
+            this.txtTelefon.Name = "txtTelefon";
+            this.txtTelefon.Size = new System.Drawing.Size(217, 21);
+            this.txtTelefon.TabIndex = 3;
+            // 
             // labelControl13
             // 
             this.labelControl13.Location = new System.Drawing.Point(6, 265);
@@ -234,30 +262,6 @@
             this.labelControl12.TabIndex = 28;
             this.labelControl12.Text = "İl:";
             // 
-            // txtTelefon2
-            // 
-            this.txtTelefon2.Location = new System.Drawing.Point(94, 132);
-            this.txtTelefon2.Mask = "(999) 000-0000";
-            this.txtTelefon2.Name = "txtTelefon2";
-            this.txtTelefon2.Size = new System.Drawing.Size(217, 21);
-            this.txtTelefon2.TabIndex = 4;
-            // 
-            // txtTcKimlik
-            // 
-            this.txtTcKimlik.Location = new System.Drawing.Point(94, 158);
-            this.txtTcKimlik.Mask = "00000000000";
-            this.txtTcKimlik.Name = "txtTcKimlik";
-            this.txtTcKimlik.Size = new System.Drawing.Size(217, 21);
-            this.txtTcKimlik.TabIndex = 5;
-            this.txtTcKimlik.ValidatingType = typeof(int);
-            // 
-            // txtVergiDairesi
-            // 
-            this.txtVergiDairesi.Location = new System.Drawing.Point(94, 184);
-            this.txtVergiDairesi.Name = "txtVergiDairesi";
-            this.txtVergiDairesi.Size = new System.Drawing.Size(217, 20);
-            this.txtVergiDairesi.TabIndex = 6;
-            // 
             // txtMail
             // 
             this.txtMail.Location = new System.Drawing.Point(94, 210);
@@ -272,14 +276,6 @@
             this.labelControl11.Size = new System.Drawing.Size(22, 13);
             this.labelControl11.TabIndex = 26;
             this.labelControl11.Text = "Mail:";
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Location = new System.Drawing.Point(6, 187);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(56, 13);
-            this.labelControl7.TabIndex = 12;
-            this.labelControl7.Text = "Vergi Daire:";
             // 
             // labelControl10
             // 
@@ -297,6 +293,21 @@
             this.labelControl9.TabIndex = 22;
             this.labelControl9.Text = "Telefon 2:";
             // 
+            // txtVergiDairesi
+            // 
+            this.txtVergiDairesi.Location = new System.Drawing.Point(94, 184);
+            this.txtVergiDairesi.Name = "txtVergiDairesi";
+            this.txtVergiDairesi.Size = new System.Drawing.Size(217, 20);
+            this.txtVergiDairesi.TabIndex = 6;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Location = new System.Drawing.Point(6, 187);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(56, 13);
+            this.labelControl7.TabIndex = 12;
+            this.labelControl7.Text = "Vergi Daire:";
+            // 
             // labelControl3
             // 
             this.labelControl3.Location = new System.Drawing.Point(6, 109);
@@ -305,6 +316,13 @@
             this.labelControl3.TabIndex = 5;
             this.labelControl3.Text = "Telefon:";
             // 
+            // txtSoyad
+            // 
+            this.txtSoyad.Location = new System.Drawing.Point(94, 80);
+            this.txtSoyad.Name = "txtSoyad";
+            this.txtSoyad.Size = new System.Drawing.Size(217, 20);
+            this.txtSoyad.TabIndex = 2;
+            // 
             // labelControl2
             // 
             this.labelControl2.Location = new System.Drawing.Point(6, 83);
@@ -312,21 +330,6 @@
             this.labelControl2.Size = new System.Drawing.Size(34, 13);
             this.labelControl2.TabIndex = 3;
             this.labelControl2.Text = "Soyad:";
-            // 
-            // txtTelefon
-            // 
-            this.txtTelefon.Location = new System.Drawing.Point(94, 106);
-            this.txtTelefon.Mask = "(999) 000-0000";
-            this.txtTelefon.Name = "txtTelefon";
-            this.txtTelefon.Size = new System.Drawing.Size(217, 21);
-            this.txtTelefon.TabIndex = 3;
-            // 
-            // txtSoyad
-            // 
-            this.txtSoyad.Location = new System.Drawing.Point(94, 80);
-            this.txtSoyad.Name = "txtSoyad";
-            this.txtSoyad.Size = new System.Drawing.Size(217, 20);
-            this.txtSoyad.TabIndex = 2;
             // 
             // FrmMusteriler
             // 
@@ -348,8 +351,8 @@
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbilce.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbil.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtVergiDairesi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMail.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtVergiDairesi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoyad.Properties)).EndInit();
             this.ResumeLayout(false);
 

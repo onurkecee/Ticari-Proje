@@ -56,27 +56,34 @@ namespace Ticari_Otomasyon
 
         public void DovizKurları()
         {
-            XmlDocument xmlVerisi = new XmlDocument();
-            xmlVerisi.Load("http://www.tcmb.gov.tr/kurlar/today.xml");
+            try
+            {
+                XmlDocument xmlVerisi = new XmlDocument();
+                xmlVerisi.Load("http://www.tcmb.gov.tr/kurlar/today.xml");
 
-            decimal dolar = Convert.ToDecimal(xmlVerisi.SelectSingleNode(string.Format("Tarih_Date/Currency[@Kod='{0}']/ForexSelling", "USD")).InnerText.Replace('.', ','));
-            decimal euro = Convert.ToDecimal(xmlVerisi.SelectSingleNode(string.Format("Tarih_Date/Currency[@Kod='{0}']/ForexSelling", "EUR")).InnerText.Replace('.', ','));
-            decimal sterlin = Convert.ToDecimal(xmlVerisi.SelectSingleNode(string.Format("Tarih_Date/Currency[@Kod='{0}']/ForexSelling", "GBP")).InnerText.Replace('.', ','));
-            decimal frank = Convert.ToDecimal(xmlVerisi.SelectSingleNode(string.Format("Tarih_Date/Currency[@Kod='{0}']/ForexSelling", "CHF")).InnerText.Replace('.', ','));
-            decimal ruble = Convert.ToDecimal(xmlVerisi.SelectSingleNode(string.Format("Tarih_Date/Currency[@Kod='{0}']/ForexSelling", "RUB")).InnerText.Replace('.', ','));
-            decimal yuan = Convert.ToDecimal(xmlVerisi.SelectSingleNode(string.Format("Tarih_Date/Currency[@Kod='{0}']/ForexSelling", "CNY")).InnerText.Replace('.', ','));
-            decimal dinar = Convert.ToDecimal(xmlVerisi.SelectSingleNode(string.Format("Tarih_Date/Currency[@Kod='{0}']/ForexSelling", "KWD")).InnerText.Replace('.', ','));
-            decimal kron = Convert.ToDecimal(xmlVerisi.SelectSingleNode(string.Format("Tarih_Date/Currency[@Kod='{0}']/ForexSelling", "NOK")).InnerText.Replace('.', ','));
+                decimal dolar = Convert.ToDecimal(xmlVerisi.SelectSingleNode(string.Format("Tarih_Date/Currency[@Kod='{0}']/ForexSelling", "USD")).InnerText.Replace('.', ','));
+                decimal euro = Convert.ToDecimal(xmlVerisi.SelectSingleNode(string.Format("Tarih_Date/Currency[@Kod='{0}']/ForexSelling", "EUR")).InnerText.Replace('.', ','));
+                decimal sterlin = Convert.ToDecimal(xmlVerisi.SelectSingleNode(string.Format("Tarih_Date/Currency[@Kod='{0}']/ForexSelling", "GBP")).InnerText.Replace('.', ','));
+                decimal frank = Convert.ToDecimal(xmlVerisi.SelectSingleNode(string.Format("Tarih_Date/Currency[@Kod='{0}']/ForexSelling", "CHF")).InnerText.Replace('.', ','));
+                decimal ruble = Convert.ToDecimal(xmlVerisi.SelectSingleNode(string.Format("Tarih_Date/Currency[@Kod='{0}']/ForexSelling", "RUB")).InnerText.Replace('.', ','));
+                decimal yuan = Convert.ToDecimal(xmlVerisi.SelectSingleNode(string.Format("Tarih_Date/Currency[@Kod='{0}']/ForexSelling", "CNY")).InnerText.Replace('.', ','));
+                decimal dinar = Convert.ToDecimal(xmlVerisi.SelectSingleNode(string.Format("Tarih_Date/Currency[@Kod='{0}']/ForexSelling", "KWD")).InnerText.Replace('.', ','));
+                decimal kron = Convert.ToDecimal(xmlVerisi.SelectSingleNode(string.Format("Tarih_Date/Currency[@Kod='{0}']/ForexSelling", "NOK")).InnerText.Replace('.', ','));
 
+                lblDolar.Text = dolar.ToString();
+                lblEuro.Text = euro.ToString();
+                lblSterlin.Text = sterlin.ToString();
+                lblFrank.Text = frank.ToString();
+                lblRuble.Text = ruble.ToString();
+                lblYuan.Text = yuan.ToString();
+                lblDinar.Text = dinar.ToString();
+                lblKron.Text = kron.ToString();
+            }
+            catch (XmlException ex)
+            {
 
-            lblDolar.Text = dolar.ToString();
-            lblEuro.Text = euro.ToString();
-            lblSterlin.Text = sterlin.ToString();
-            lblFrank.Text = frank.ToString();
-            lblRuble.Text = ruble.ToString();
-            lblYuan.Text = yuan.ToString();
-            lblDinar.Text = dinar.ToString();
-            lblKron.Text = kron.ToString();
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void HaberBasliklari()
