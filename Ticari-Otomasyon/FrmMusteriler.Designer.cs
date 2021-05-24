@@ -57,6 +57,13 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txtSoyad = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.radioAdArama = new System.Windows.Forms.RadioButton();
+            this.radioTcArama = new System.Windows.Forms.RadioButton();
+            this.btnAra = new DevExpress.XtraEditors.SimpleButton();
+            this.txtMusteriAra = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.lblToplamMusteri = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -68,6 +75,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtVergiDairesi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoyad.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMusteriAra.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // txtID
@@ -147,10 +155,10 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(-2, -2);
+            this.gridControl1.Location = new System.Drawing.Point(0, 61);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1024, 738);
+            this.gridControl1.Size = new System.Drawing.Size(1024, 675);
             this.gridControl1.TabIndex = 2;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -331,11 +339,86 @@
             this.labelControl2.TabIndex = 3;
             this.labelControl2.Text = "Soyad:";
             // 
+            // radioAdArama
+            // 
+            this.radioAdArama.AutoSize = true;
+            this.radioAdArama.Location = new System.Drawing.Point(12, 12);
+            this.radioAdArama.Name = "radioAdArama";
+            this.radioAdArama.Size = new System.Drawing.Size(106, 17);
+            this.radioAdArama.TabIndex = 4;
+            this.radioAdArama.TabStop = true;
+            this.radioAdArama.Text = "İsme Göre Arama";
+            this.radioAdArama.UseVisualStyleBackColor = true;
+            // 
+            // radioTcArama
+            // 
+            this.radioTcArama.AutoSize = true;
+            this.radioTcArama.Location = new System.Drawing.Point(12, 35);
+            this.radioTcArama.Name = "radioTcArama";
+            this.radioTcArama.Size = new System.Drawing.Size(187, 17);
+            this.radioTcArama.TabIndex = 5;
+            this.radioTcArama.TabStop = true;
+            this.radioTcArama.Text = "TC Kimlik Numarasına Göre Arama";
+            this.radioTcArama.UseVisualStyleBackColor = true;
+            // 
+            // btnAra
+            // 
+            this.btnAra.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAra.ImageOptions.Image")));
+            this.btnAra.Location = new System.Drawing.Point(445, 22);
+            this.btnAra.Name = "btnAra";
+            this.btnAra.Size = new System.Drawing.Size(53, 20);
+            this.btnAra.TabIndex = 25;
+            this.btnAra.Text = "Ara";
+            this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
+            // 
+            // txtMusteriAra
+            // 
+            this.txtMusteriAra.Location = new System.Drawing.Point(281, 22);
+            this.txtMusteriAra.Name = "txtMusteriAra";
+            this.txtMusteriAra.Size = new System.Drawing.Size(158, 20);
+            this.txtMusteriAra.TabIndex = 23;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(218, 25);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(59, 13);
+            this.labelControl4.TabIndex = 24;
+            this.labelControl4.Text = "Müşteri Ara:";
+            // 
+            // lblToplamMusteri
+            // 
+            this.lblToplamMusteri.AutoSize = true;
+            this.lblToplamMusteri.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblToplamMusteri.ForeColor = System.Drawing.Color.Red;
+            this.lblToplamMusteri.Location = new System.Drawing.Point(965, 12);
+            this.lblToplamMusteri.Name = "lblToplamMusteri";
+            this.lblToplamMusteri.Size = new System.Drawing.Size(21, 13);
+            this.lblToplamMusteri.TabIndex = 28;
+            this.lblToplamMusteri.Text = "00";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(825, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(134, 13);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Toplam Müşteri Sayısı:";
+            // 
             // FrmMusteriler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1347, 735);
+            this.Controls.Add(this.lblToplamMusteri);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnAra);
+            this.Controls.Add(this.txtMusteriAra);
+            this.Controls.Add(this.labelControl4);
+            this.Controls.Add(this.radioTcArama);
+            this.Controls.Add(this.radioAdArama);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.gridControl1);
             this.Name = "FrmMusteriler";
@@ -354,7 +437,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMail.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtVergiDairesi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoyad.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMusteriAra.Properties)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -387,5 +472,12 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.TextEdit txtSoyad;
         private DevExpress.XtraEditors.LabelControl labelControl2;
+        private System.Windows.Forms.RadioButton radioAdArama;
+        private System.Windows.Forms.RadioButton radioTcArama;
+        private DevExpress.XtraEditors.SimpleButton btnAra;
+        private DevExpress.XtraEditors.TextEdit txtMusteriAra;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private System.Windows.Forms.Label lblToplamMusteri;
+        private System.Windows.Forms.Label label1;
     }
 }

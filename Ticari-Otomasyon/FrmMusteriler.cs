@@ -121,10 +121,57 @@ namespace Ticari_Otomasyon
 
         }
 
+        public void MusteriAra()
+        {
+            if (radioAdArama.Checked == true)
+            {
+                try
+                {
+                    SqlCommand isimarama = new SqlCommand("select * from TBLMUSTERILER where AD like '%" + txtMusteriAra.Text + "%'", baglan.baglanti());
+                    SqlDataAdapter adap = new SqlDataAdapter(isimarama);
+                    DataTable dt = new DataTable();
+                    adap.Fill(dt);
+                    gridControl1.DataSource = dt;
+                    baglan.baglanti().Close();
+                }
+                catch (SqlException ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+            if (radioTcArama.Checked == true)
+            {
+                try
+                {
+                    SqlCommand tcarama = new SqlCommand("select * from TBLMUSTERILER where TC like '%" + txtMusteriAra.Text + "%'", baglan.baglanti());
+                    SqlDataAdapter adap = new SqlDataAdapter(tcarama);
+                    DataTable dt = new DataTable();
+                    adap.Fill(dt);
+                    gridControl1.DataSource = dt;
+                    baglan.baglanti().Close();
+                }
+                catch (SqlException ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+        }
+
+        public void ToplamMusteriSayisi()
+        {
+            int toplam = gridView1.RowCount;
+            lblToplamMusteri.Text = toplam.ToString();
+        }
+
         private void FrmMusteriler_Load(object sender, EventArgs e)
         {
             MusteriListesi();
             SehirListesi();
+            ToplamMusteriSayisi();
         }
 
         private void cmbil_SelectedIndexChanged(object sender, EventArgs e)
@@ -159,18 +206,27 @@ namespace Ticari_Otomasyon
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            DataRow data = gridView1.GetDataRow(gridView1.FocusedRowHandle);
-            txtID.Text = data["ID"].ToString();
-            txtAd.Text = data["AD"].ToString();
-            txtSoyad.Text = data["SOYAD"].ToString();
-            txtTelefon.Text = data["TELEFON"].ToString();
-            txtTelefon2.Text = data["TELEFON2"].ToString();
-            txtTcKimlik.Text = data["TC"].ToString();
-            txtMail.Text = data["MAIL"].ToString();
-            cmbil.Text = data["IL"].ToString();
-            cmbilce.Text = data["ILCE"].ToString();
-            txtAdres.Text = data["ADRES"].ToString();
-            txtVergiDairesi.Text = data["VERGIDAIRE"].ToString();
+            try
+            {
+                DataRow data = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+                txtID.Text = data["ID"].ToString();
+                txtAd.Text = data["AD"].ToString();
+                txtSoyad.Text = data["SOYAD"].ToString();
+                txtTelefon.Text = data["TELEFON"].ToString();
+                txtTelefon2.Text = data["TELEFON2"].ToString();
+                txtTcKimlik.Text = data["TC"].ToString();
+                txtMail.Text = data["MAIL"].ToString();
+                cmbil.Text = data["IL"].ToString();
+                cmbilce.Text = data["ILCE"].ToString();
+                txtAdres.Text = data["ADRES"].ToString();
+                txtVergiDairesi.Text = data["VERGIDAIRE"].ToString();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Böyle Müşteri Yok");
+            }
+
         }
 
         private void btnMusteriSil_Click(object sender, EventArgs e)
@@ -181,6 +237,11 @@ namespace Ticari_Otomasyon
         private void btnMusteriGuncelle_Click(object sender, EventArgs e)
         {
             MusteriGuncelle();
+        }
+
+        private void btnAra_Click(object sender, EventArgs e)
+        {
+            MusteriAra();
         }
     }
 }
