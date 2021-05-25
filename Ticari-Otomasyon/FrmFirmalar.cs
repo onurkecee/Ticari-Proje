@@ -122,30 +122,84 @@ namespace Ticari_Otomasyon
             }
         }
 
+        public void FirmaAra()
+        {
+            if (radioFirmaArama.Checked == true)
+            {
+                try
+                {
+                    SqlDataAdapter adap = new SqlDataAdapter("select * from TBLFIRMALAR where AD like '%" + txtFirmaAra.Text + "%'", baglan.baglanti());
+                    DataTable dt = new DataTable();
+                    adap.Fill(dt);
+                    gridControl1.DataSource = dt;
+                    baglan.baglanti().Close();
+                }
+                catch (SqlException ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+            if (radioSektorArama.Checked == true)
+            {
+                try
+                {
+                    SqlDataAdapter adap = new SqlDataAdapter("select * from TBLFIRMALAR where SEKTOR like '%" + txtFirmaAra.Text + "'", baglan.baglanti());
+                    DataTable dt = new DataTable();
+                    adap.Fill(dt);
+                    gridControl1.DataSource = dt;
+                    baglan.baglanti().Close();
+                }
+                catch (SqlException ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+        }
+
+        public void ToplamFirmaSayisi()
+        {
+            int toplam = gridView1.RowCount;
+            lblToplamFirma.Text = toplam.ToString();
+        }
+
         private void FrmFirmalar_Load(object sender, EventArgs e)
         {
             FirmaListesi();
             SehirListesi();
+            ToplamFirmaSayisi();
         }
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            DataRow data = gridView1.GetDataRow(gridView1.FocusedRowHandle);
-            txtAd.Text = data["AD"].ToString();
-            txtAdres.Text = data["ADRES"].ToString();
-            txtFax.Text = data["FAX"].ToString();
-            txtID.Text = data["ID"].ToString();
-            txtMail.Text = data["MAIL"].ToString();
-            txtTelefon1.Text = data["TELEFON1"].ToString();
-            txtTelefon2.Text = data["TELEFON2"].ToString();
-            txtTelefon3.Text = data["TELEFON3"].ToString();
-            txtVergiDairesi.Text = data["VERGIDAIRESI"].ToString();
-            txtYetkili.Text = data["YETKILIADSOYAD"].ToString();
-            txtYetkiliTC.Text = data["YETKILITC"].ToString();
-            cmbil.Text = data["IL"].ToString();
-            cmbilce.Text = data["ILCE"].ToString();
-            cmbSektor.Text = data["SEKTOR"].ToString();
-            cmbYetkiliGorev.Text = data["YETKILISTATU"].ToString();
+            try
+            {
+                DataRow data = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+                txtAd.Text = data["AD"].ToString();
+                txtAdres.Text = data["ADRES"].ToString();
+                txtFax.Text = data["FAX"].ToString();
+                txtID.Text = data["ID"].ToString();
+                txtMail.Text = data["MAIL"].ToString();
+                txtTelefon1.Text = data["TELEFON1"].ToString();
+                txtTelefon2.Text = data["TELEFON2"].ToString();
+                txtTelefon3.Text = data["TELEFON3"].ToString();
+                txtVergiDairesi.Text = data["VERGIDAIRESI"].ToString();
+                txtYetkili.Text = data["YETKILIADSOYAD"].ToString();
+                txtYetkiliTC.Text = data["YETKILITC"].ToString();
+                cmbil.Text = data["IL"].ToString();
+                cmbilce.Text = data["ILCE"].ToString();
+                cmbSektor.Text = data["SEKTOR"].ToString();
+                cmbYetkiliGorev.Text = data["YETKILISTATU"].ToString();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Böyle Bir Firma Yok");
+            }
+
         }
 
         private void cmbil_SelectedIndexChanged(object sender, EventArgs e)
@@ -195,6 +249,11 @@ namespace Ticari_Otomasyon
         private void btnFirmaGuncelle_Click(object sender, EventArgs e)
         {
             FirmaGuncelle();
+        }
+
+        private void btnAra_Click(object sender, EventArgs e)
+        {
+            FirmaAra();
         }
     }
 }

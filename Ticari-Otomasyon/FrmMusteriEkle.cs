@@ -22,29 +22,41 @@ namespace Ticari_Otomasyon
 
         public void MusteriEkle()
         {
+
             try
             {
-                if (txtAd.Text != "" && txtMail.Text != "" && txtSoyad.Text != "" && txtTcKimlik.Text != "" && txtTelefon.Text != "" && txtMail.Text != "" && txtVergiDairesi.Text != "")
+                SqlCommand tckontrol = new SqlCommand("select count(*) from TBLMUSTERILER where TC=@p1", baglan.baglanti());
+                tckontrol.Parameters.AddWithValue("@p1", txtTcKimlik.Text);
+                int sonuc = (int)tckontrol.ExecuteScalar();
+                if (sonuc == 0)
                 {
-                    SqlCommand musteri = new SqlCommand("insert into TBLMUSTERILER (AD,SOYAD,TELEFON,TELEFON2,TC,MAIL,IL,ILCE,ADRES,VERGIDAIRE) values(@p1,@p2,@p3,@p4,@p5,@p6,@p7,@p8,@p9,@p10)", baglan.baglanti());
-                    musteri.Parameters.AddWithValue("@p1", txtAd.Text);
-                    musteri.Parameters.AddWithValue("@p2", txtSoyad.Text);
-                    musteri.Parameters.AddWithValue("@p3", txtTelefon.Text);
-                    musteri.Parameters.AddWithValue("@p4", txtTelefon2.Text);
-                    musteri.Parameters.AddWithValue("@p5", txtTcKimlik.Text);
-                    musteri.Parameters.AddWithValue("@p6", txtMail.Text);
-                    musteri.Parameters.AddWithValue("@p7", cmbil.Text);
-                    musteri.Parameters.AddWithValue("@p8", cmbilce.Text);
-                    musteri.Parameters.AddWithValue("@p9", txtAdres.Text);
-                    musteri.Parameters.AddWithValue("@p10", txtVergiDairesi.Text);
-                    musteri.ExecuteNonQuery();
-                    baglan.baglanti().Close();
-                    MessageBox.Show(txtAd.Text + "Adlı Müşteri Kaydedildi", "BAŞARILI", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    if (txtAd.Text != "" && txtMail.Text != "" && txtSoyad.Text != "" && txtTcKimlik.Text != "" && txtTelefon.Text != "" && txtMail.Text != "" && txtVergiDairesi.Text != "")
+                    {
+                        SqlCommand musteri = new SqlCommand("insert into TBLMUSTERILER (AD,SOYAD,TELEFON,TELEFON2,TC,MAIL,IL,ILCE,ADRES,VERGIDAIRE) values(@p1,@p2,@p3,@p4,@p5,@p6,@p7,@p8,@p9,@p10)", baglan.baglanti());
+                        musteri.Parameters.AddWithValue("@p1", txtAd.Text);
+                        musteri.Parameters.AddWithValue("@p2", txtSoyad.Text);
+                        musteri.Parameters.AddWithValue("@p3", txtTelefon.Text);
+                        musteri.Parameters.AddWithValue("@p4", txtTelefon2.Text);
+                        musteri.Parameters.AddWithValue("@p5", txtTcKimlik.Text);
+                        musteri.Parameters.AddWithValue("@p6", txtMail.Text);
+                        musteri.Parameters.AddWithValue("@p7", cmbil.Text);
+                        musteri.Parameters.AddWithValue("@p8", cmbilce.Text);
+                        musteri.Parameters.AddWithValue("@p9", txtAdres.Text);
+                        musteri.Parameters.AddWithValue("@p10", txtVergiDairesi.Text);
+                        musteri.ExecuteNonQuery();
+                        baglan.baglanti().Close();
+                        MessageBox.Show(txtAd.Text + " " + txtSoyad.Text + " Adlı Müşteri Kaydedildi", "BAŞARILI", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lütfen Alanları Doldurunuz", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Lütfen Alanları Doldurunuz", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(txtTcKimlik.Text + " TC Kimlik Numaralı Müşteri Zaten Mevcut", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+
             }
             catch (SqlException ex)
             {

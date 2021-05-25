@@ -65,6 +65,13 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.radioFirmaArama = new System.Windows.Forms.RadioButton();
+            this.radioSektorArama = new System.Windows.Forms.RadioButton();
+            this.btnAra = new DevExpress.XtraEditors.SimpleButton();
+            this.txtFirmaAra = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
+            this.lblToplamFirma = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.cmbilce.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbYetkiliGorev.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtYetkili.Properties)).BeginInit();
@@ -78,6 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtAd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFirmaAra.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbilce
@@ -409,10 +417,10 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(-2, -2);
+            this.gridControl1.Location = new System.Drawing.Point(0, 61);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1024, 738);
+            this.gridControl1.Size = new System.Drawing.Size(1024, 675);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -427,11 +435,86 @@
             this.gridView1.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
+            // radioFirmaArama
+            // 
+            this.radioFirmaArama.AutoSize = true;
+            this.radioFirmaArama.Location = new System.Drawing.Point(12, 12);
+            this.radioFirmaArama.Name = "radioFirmaArama";
+            this.radioFirmaArama.Size = new System.Drawing.Size(139, 17);
+            this.radioFirmaArama.TabIndex = 5;
+            this.radioFirmaArama.TabStop = true;
+            this.radioFirmaArama.Text = "Firma Adına Göre Arama";
+            this.radioFirmaArama.UseVisualStyleBackColor = true;
+            // 
+            // radioSektorArama
+            // 
+            this.radioSektorArama.AutoSize = true;
+            this.radioSektorArama.Location = new System.Drawing.Point(12, 38);
+            this.radioSektorArama.Name = "radioSektorArama";
+            this.radioSektorArama.Size = new System.Drawing.Size(121, 17);
+            this.radioSektorArama.TabIndex = 6;
+            this.radioSektorArama.TabStop = true;
+            this.radioSektorArama.Text = "Sektöre Göre Arama";
+            this.radioSektorArama.UseVisualStyleBackColor = true;
+            // 
+            // btnAra
+            // 
+            this.btnAra.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAra.ImageOptions.Image")));
+            this.btnAra.Location = new System.Drawing.Point(433, 22);
+            this.btnAra.Name = "btnAra";
+            this.btnAra.Size = new System.Drawing.Size(53, 20);
+            this.btnAra.TabIndex = 28;
+            this.btnAra.Text = "Ara";
+            this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
+            // 
+            // txtFirmaAra
+            // 
+            this.txtFirmaAra.Location = new System.Drawing.Point(269, 22);
+            this.txtFirmaAra.Name = "txtFirmaAra";
+            this.txtFirmaAra.Size = new System.Drawing.Size(158, 20);
+            this.txtFirmaAra.TabIndex = 26;
+            // 
+            // labelControl15
+            // 
+            this.labelControl15.Location = new System.Drawing.Point(213, 25);
+            this.labelControl15.Name = "labelControl15";
+            this.labelControl15.Size = new System.Drawing.Size(50, 13);
+            this.labelControl15.TabIndex = 27;
+            this.labelControl15.Text = "Firma Ara:";
+            // 
+            // lblToplamFirma
+            // 
+            this.lblToplamFirma.AutoSize = true;
+            this.lblToplamFirma.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblToplamFirma.ForeColor = System.Drawing.Color.Red;
+            this.lblToplamFirma.Location = new System.Drawing.Point(946, 12);
+            this.lblToplamFirma.Name = "lblToplamFirma";
+            this.lblToplamFirma.Size = new System.Drawing.Size(21, 13);
+            this.lblToplamFirma.TabIndex = 30;
+            this.lblToplamFirma.Text = "00";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(823, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(123, 13);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "Toplam Firma Sayısı:";
+            // 
             // FrmFirmalar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1347, 735);
+            this.Controls.Add(this.lblToplamFirma);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnAra);
+            this.Controls.Add(this.txtFirmaAra);
+            this.Controls.Add(this.labelControl15);
+            this.Controls.Add(this.radioSektorArama);
+            this.Controls.Add(this.radioFirmaArama);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.gridControl1);
             this.Name = "FrmFirmalar";
@@ -451,7 +534,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtAd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFirmaAra.Properties)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -493,5 +578,12 @@
         private System.Windows.Forms.MaskedTextBox txtTelefon3;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.ComboBoxEdit cmbSektor;
+        private System.Windows.Forms.RadioButton radioFirmaArama;
+        private System.Windows.Forms.RadioButton radioSektorArama;
+        private DevExpress.XtraEditors.SimpleButton btnAra;
+        private DevExpress.XtraEditors.TextEdit txtFirmaAra;
+        private DevExpress.XtraEditors.LabelControl labelControl15;
+        private System.Windows.Forms.Label lblToplamFirma;
+        private System.Windows.Forms.Label label1;
     }
 }
