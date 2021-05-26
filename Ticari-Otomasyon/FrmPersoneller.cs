@@ -113,25 +113,47 @@ namespace Ticari_Otomasyon
 
         }
 
+        public void PersonelAra()
+        {
+            SqlDataAdapter adap = new SqlDataAdapter("select * from TBLPERSONELLER where AD like'%" + txtPersonelAra.Text + "%'", baglan.baglanti());
+            DataTable dt = new DataTable();
+            adap.Fill(dt);
+            gridControl1.DataSource = dt;
+            baglan.baglanti().Close();
+        }
+
         private void FrmPersoneller_Load(object sender, EventArgs e)
         {
             PersonelListesi();
             SehirListesi();
+
+            int toplam = gridView1.RowCount;
+            lblToplamPersonel.Text = toplam.ToString();
         }
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            DataRow data = gridView1.GetDataRow(gridView1.FocusedRowHandle);
-            txtAd.Text = data["AD"].ToString();
-            txtAdres.Text = data["ADRES"].ToString();
-            txtID.Text = data["ID"].ToString();
-            txtMail.Text = data["MAIL"].ToString();
-            txtSoyad.Text = data["SOYAD"].ToString();
-            txtTcKimlik.Text = data["TC"].ToString();
-            txtTelefon.Text = data["TELEFON"].ToString();
-            cmbGorev.Text = data["GOREV"].ToString();
-            cmbil.Text = data["IL"].ToString();
-            cmbilce.Text = data["ILCE"].ToString();
+            try
+            {
+                DataRow data = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+                txtAd.Text = data["AD"].ToString();
+                txtAdres.Text = data["ADRES"].ToString();
+                txtID.Text = data["ID"].ToString();
+                txtMail.Text = data["MAIL"].ToString();
+                txtSoyad.Text = data["SOYAD"].ToString();
+                txtTcKimlik.Text = data["TC"].ToString();
+                txtTelefon.Text = data["TELEFON"].ToString();
+                cmbGorev.Text = data["GOREV"].ToString();
+                cmbil.Text = data["IL"].ToString();
+                cmbilce.Text = data["ILCE"].ToString();
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Böyle Bir Personel Yok");
+            }
+
         }
 
         private void cmbil_SelectedIndexChanged(object sender, EventArgs e)
@@ -181,6 +203,22 @@ namespace Ticari_Otomasyon
         private void btnPersonelGuncelle_Click(object sender, EventArgs e)
         {
             PersonelGuncelle();
+        }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            FrmPersonelDetay personeldetay = new FrmPersonelDetay();
+            DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+            if (dr != null)
+            {
+                personeldetay.id = dr["ID"].ToString();
+            }
+            personeldetay.Show();
+        }
+
+        private void btnAra_Click(object sender, EventArgs e)
+        {
+            PersonelAra();
         }
     }
 }

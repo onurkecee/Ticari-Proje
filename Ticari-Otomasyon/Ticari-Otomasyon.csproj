@@ -224,6 +224,12 @@
     <Compile Include="FrmNotlar.Designer.cs">
       <DependentUpon>FrmNotlar.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPersonelDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPersonelDetay.Designer.cs">
+      <DependentUpon>FrmPersonelDetay.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPersonelEkle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -359,6 +365,9 @@
     <EmbeddedResource Include="FrmNotlar.resx">
       <DependentUpon>FrmNotlar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmPersonelDetay.resx">
+      <DependentUpon>FrmPersonelDetay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPersonelEkle.resx">
       <DependentUpon>FrmPersonelEkle.cs</DependentUpon>
     </EmbeddedResource>
@@ -441,6 +450,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="image\log.png" />
+    <None Include="image\persons.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

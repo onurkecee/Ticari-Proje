@@ -53,8 +53,13 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.cmbGorev = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.btnAra = new DevExpress.XtraEditors.SimpleButton();
+            this.txtPersonelAra = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.lblToplamPersonel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.cmbilce.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbil.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMail.Properties)).BeginInit();
@@ -66,6 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbGorev.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPersonelAra.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbilce
@@ -161,7 +167,7 @@
             // 
             // btnPersonelGuncelle
             // 
-            this.btnPersonelGuncelle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMusteriGuncelle.ImageOptions.Image")));
+            this.btnPersonelGuncelle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPersonelGuncelle.ImageOptions.Image")));
             this.btnPersonelGuncelle.Location = new System.Drawing.Point(129, 389);
             this.btnPersonelGuncelle.Name = "btnPersonelGuncelle";
             this.btnPersonelGuncelle.Size = new System.Drawing.Size(85, 41);
@@ -171,7 +177,7 @@
             // 
             // btnPersonelSil
             // 
-            this.btnPersonelSil.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMusteriSil.ImageOptions.Image")));
+            this.btnPersonelSil.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPersonelSil.ImageOptions.Image")));
             this.btnPersonelSil.Location = new System.Drawing.Point(220, 389);
             this.btnPersonelSil.Name = "btnPersonelSil";
             this.btnPersonelSil.Size = new System.Drawing.Size(85, 41);
@@ -181,7 +187,7 @@
             // 
             // btnPersonelEkle
             // 
-            this.btnPersonelEkle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMusteriEkle.ImageOptions.Image")));
+            this.btnPersonelEkle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPersonelEkle.ImageOptions.Image")));
             this.btnPersonelEkle.Location = new System.Drawing.Point(9, 389);
             this.btnPersonelEkle.Name = "btnPersonelEkle";
             this.btnPersonelEkle.Size = new System.Drawing.Size(114, 41);
@@ -237,10 +243,10 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(-2, -2);
+            this.gridControl1.Location = new System.Drawing.Point(0, 61);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1024, 738);
+            this.gridControl1.Size = new System.Drawing.Size(1024, 675);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -254,6 +260,7 @@
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
+            this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // labelControl1
             // 
@@ -293,14 +300,6 @@
             this.groupControl1.Size = new System.Drawing.Size(320, 738);
             this.groupControl1.TabIndex = 5;
             // 
-            // labelControl4
-            // 
-            this.labelControl4.Location = new System.Drawing.Point(6, 241);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(33, 13);
-            this.labelControl4.TabIndex = 32;
-            this.labelControl4.Text = "Görev:";
-            // 
             // cmbGorev
             // 
             this.cmbGorev.Location = new System.Drawing.Point(94, 238);
@@ -318,11 +317,70 @@
             this.cmbGorev.Size = new System.Drawing.Size(217, 20);
             this.cmbGorev.TabIndex = 8;
             // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(6, 241);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(33, 13);
+            this.labelControl4.TabIndex = 32;
+            this.labelControl4.Text = "Görev:";
+            // 
+            // btnAra
+            // 
+            this.btnAra.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAra.ImageOptions.Image")));
+            this.btnAra.Location = new System.Drawing.Point(251, 22);
+            this.btnAra.Name = "btnAra";
+            this.btnAra.Size = new System.Drawing.Size(53, 20);
+            this.btnAra.TabIndex = 25;
+            this.btnAra.Text = "Ara";
+            this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
+            // 
+            // txtPersonelAra
+            // 
+            this.txtPersonelAra.Location = new System.Drawing.Point(87, 22);
+            this.txtPersonelAra.Name = "txtPersonelAra";
+            this.txtPersonelAra.Size = new System.Drawing.Size(158, 20);
+            this.txtPersonelAra.TabIndex = 23;
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Location = new System.Drawing.Point(14, 25);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(65, 13);
+            this.labelControl9.TabIndex = 24;
+            this.labelControl9.Text = "Personel Ara:";
+            // 
+            // lblToplamPersonel
+            // 
+            this.lblToplamPersonel.AutoSize = true;
+            this.lblToplamPersonel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblToplamPersonel.ForeColor = System.Drawing.Color.Red;
+            this.lblToplamPersonel.Location = new System.Drawing.Point(958, 9);
+            this.lblToplamPersonel.Name = "lblToplamPersonel";
+            this.lblToplamPersonel.Size = new System.Drawing.Size(21, 13);
+            this.lblToplamPersonel.TabIndex = 28;
+            this.lblToplamPersonel.Text = "00";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(810, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(142, 13);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Toplam Personel Sayısı:";
+            // 
             // FrmPersoneller
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1347, 735);
+            this.Controls.Add(this.lblToplamPersonel);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnAra);
+            this.Controls.Add(this.txtPersonelAra);
+            this.Controls.Add(this.labelControl9);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.groupControl1);
             this.Name = "FrmPersoneller";
@@ -340,7 +398,9 @@
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbGorev.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPersonelAra.Properties)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -372,5 +432,10 @@
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.ComboBoxEdit cmbGorev;
         private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.SimpleButton btnAra;
+        private DevExpress.XtraEditors.TextEdit txtPersonelAra;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private System.Windows.Forms.Label lblToplamPersonel;
+        private System.Windows.Forms.Label label1;
     }
 }

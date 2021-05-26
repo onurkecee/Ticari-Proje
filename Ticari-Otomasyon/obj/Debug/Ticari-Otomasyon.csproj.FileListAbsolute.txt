@@ -307,3 +307,4 @@ C:\Users\Onur\source\repos\Ticari-Otomasyon\Ticari-Otomasyon\obj\Debug\Ticari_Ot
 C:\Users\Onur\source\repos\Ticari-Otomasyon\Ticari-Otomasyon\obj\Debug\Ticari_Otomasyon.FrmStokDetay.resources
 C:\Users\Onur\source\repos\Ticari-Otomasyon\Ticari-Otomasyon\obj\Debug\Ticari_Otomasyon.XtraReport1.resources
 C:\Users\Onur\source\repos\Ticari-Otomasyon\Ticari-Otomasyon\obj\Debug\Ticari_Otomasyon.FrmUrunDetay.resources
+C:\Users\Onur\source\repos\Ticari-Otomasyon\Ticari-Otomasyon\obj\Debug\Ticari_Otomasyon.FrmPersonelDetay.resources
