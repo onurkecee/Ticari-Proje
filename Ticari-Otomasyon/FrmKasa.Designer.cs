@@ -69,8 +69,10 @@
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.chartControl2 = new DevExpress.XtraCharts.ChartControl();
             this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
-            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.gridCikis1 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridCikis2 = new DevExpress.XtraGrid.GridControl();
+            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -102,8 +104,10 @@
             ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridCikis1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridCikis2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // xtraTabControl1
@@ -439,9 +443,10 @@
             // 
             // xtraTabPage2
             // 
+            this.xtraTabPage2.Controls.Add(this.gridCikis2);
             this.xtraTabPage2.Controls.Add(this.chartControl2);
             this.xtraTabPage2.Controls.Add(this.chartControl1);
-            this.xtraTabPage2.Controls.Add(this.gridControl2);
+            this.xtraTabPage2.Controls.Add(this.gridCikis1);
             this.xtraTabPage2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPage2.ImageOptions.Image")));
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Size = new System.Drawing.Size(1341, 704);
@@ -476,14 +481,14 @@
             this.chartControl1.Size = new System.Drawing.Size(435, 300);
             this.chartControl1.TabIndex = 7;
             // 
-            // gridControl2
+            // gridCikis1
             // 
-            this.gridControl2.Location = new System.Drawing.Point(444, 3);
-            this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(894, 698);
-            this.gridControl2.TabIndex = 6;
-            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridCikis1.Location = new System.Drawing.Point(444, 3);
+            this.gridCikis1.MainView = this.gridView2;
+            this.gridCikis1.Name = "gridCikis1";
+            this.gridCikis1.Size = new System.Drawing.Size(894, 296);
+            this.gridCikis1.TabIndex = 6;
+            this.gridCikis1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
             // gridView2
@@ -491,12 +496,34 @@
             this.gridView2.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.gridView2.Appearance.Row.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.gridView2.Appearance.Row.Options.UseBackColor = true;
-            this.gridView2.GridControl = this.gridControl2;
+            this.gridView2.GridControl = this.gridCikis1;
             this.gridView2.HorzScrollStep = 1;
             this.gridView2.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsView.ShowGroupPanel = false;
             this.gridView2.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
+            // 
+            // gridCikis2
+            // 
+            this.gridCikis2.Location = new System.Drawing.Point(444, 307);
+            this.gridCikis2.MainView = this.gridView4;
+            this.gridCikis2.Name = "gridCikis2";
+            this.gridCikis2.Size = new System.Drawing.Size(894, 300);
+            this.gridCikis2.TabIndex = 9;
+            this.gridCikis2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView4});
+            // 
+            // gridView4
+            // 
+            this.gridView4.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.gridView4.Appearance.Row.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.gridView4.Appearance.Row.Options.UseBackColor = true;
+            this.gridView4.GridControl = this.gridCikis2;
+            this.gridView4.HorzScrollStep = 1;
+            this.gridView4.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
+            this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsView.ShowGroupPanel = false;
+            this.gridView4.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             // 
             // FrmKasa
             // 
@@ -547,8 +574,10 @@
             ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridCikis1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridCikis2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -560,7 +589,7 @@
         private DevExpress.XtraGrid.GridControl FirmaGrid;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
-        private DevExpress.XtraGrid.GridControl gridControl2;
+        private DevExpress.XtraGrid.GridControl gridCikis1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraEditors.GroupControl groupControl5;
         private DevExpress.XtraEditors.LabelControl lblToplamFirma;
@@ -592,5 +621,7 @@
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraGrid.GridControl MusteriGrid;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraGrid.GridControl gridCikis2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
     }
 }

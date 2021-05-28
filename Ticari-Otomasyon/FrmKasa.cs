@@ -199,7 +199,7 @@ namespace Ticari_Otomasyon
         {
             try
             {
-                SqlCommand elek = new SqlCommand("select top 4 AY, ELEKTRIK from TBLGIDERLER order by ID desc", baglan.baglanti());
+                SqlCommand elek = new SqlCommand("select top 4 AY, ELEKTRIK from TBLGIDERLER order by ID asc", baglan.baglanti());
                 SqlDataReader dr = elek.ExecuteReader();
                 while (dr.Read())
                 {
@@ -219,7 +219,7 @@ namespace Ticari_Otomasyon
         {
             try
             {
-                SqlCommand su = new SqlCommand("select top 4 AY, SU from TBLGIDERLER order by ID desc", baglan.baglanti());
+                SqlCommand su = new SqlCommand("select top 4 AY, SU from TBLGIDERLER order by ID asc", baglan.baglanti());
                 SqlDataReader dr = su.ExecuteReader();
                 while (dr.Read())
                 {
@@ -233,6 +233,40 @@ namespace Ticari_Otomasyon
                 MessageBox.Show(ex.Message);
             }
 
+        }
+
+        public void ElektrikGridDoldur()
+        {
+            try
+            {
+                SqlDataAdapter adap = new SqlDataAdapter("select top 4 AY, YIL, ELEKTRIK from TBLGIDERLER order by ID asc", baglan.baglanti());
+                DataTable dt = new DataTable();
+                adap.Fill(dt);
+                gridCikis1.DataSource = dt;
+                baglan.baglanti().Close();
+            }
+            catch (SqlException ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void SuGridDoldur()
+        {
+            try
+            {
+                SqlDataAdapter adap = new SqlDataAdapter("select top 4 AY, YIL, SU from TBLGIDERLER order by ID asc", baglan.baglanti());
+                DataTable dt = new DataTable();
+                adap.Fill(dt);
+                gridCikis2.DataSource = dt;
+                baglan.baglanti().Close();
+            }
+            catch (SqlException ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public string ad;
@@ -251,6 +285,8 @@ namespace Ticari_Otomasyon
             ToplamStok();
             ElektrikGrafigi();
             SuGrafigi();
+            ElektrikGridDoldur();
+            SuGridDoldur();
         }
     }
 }

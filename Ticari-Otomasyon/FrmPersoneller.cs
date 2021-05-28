@@ -115,11 +115,20 @@ namespace Ticari_Otomasyon
 
         public void PersonelAra()
         {
-            SqlDataAdapter adap = new SqlDataAdapter("select * from TBLPERSONELLER where AD like'%" + txtPersonelAra.Text + "%'", baglan.baglanti());
-            DataTable dt = new DataTable();
-            adap.Fill(dt);
-            gridControl1.DataSource = dt;
-            baglan.baglanti().Close();
+            try
+            {
+                SqlDataAdapter adap = new SqlDataAdapter("select * from TBLPERSONELLER where AD like'%" + txtPersonelAra.Text + "%'", baglan.baglanti());
+                DataTable dt = new DataTable();
+                adap.Fill(dt);
+                gridControl1.DataSource = dt;
+                baglan.baglanti().Close();
+            }
+            catch (SqlException ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void FrmPersoneller_Load(object sender, EventArgs e)

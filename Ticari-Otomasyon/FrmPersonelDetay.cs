@@ -52,24 +52,42 @@ namespace Ticari_Otomasyon
 
         public void PersonelKurumsalSatıs()
         {
-            SqlCommand kurumsalsatis = new SqlCommand("SELECT URUNAD, TBLFIRMAHAREKETLER.ADET,(TBLPERSONELLER.AD+' '+SOYAD) AS 'PERSONEL', TBLFIRMALAR.AD AS 'FİRMA', FIYAT,TOPLAM,FATURAID,TARIH FROM TBLFIRMAHAREKETLER INNER JOIN TBLURUNLER ON TBLFIRMAHAREKETLER.URUNID=TBLURUNLER.ID INNER JOIN TBLPERSONELLER ON TBLFIRMAHAREKETLER.PERSONEL=TBLPERSONELLER.ID INNER JOIN TBLFIRMALAR ON TBLFIRMAHAREKETLER.FIRMA=TBLFIRMALAR.ID where TBLPERSONELLER.AD=@p1", baglan.baglanti());
-            kurumsalsatis.Parameters.AddWithValue("@p1", lblAd.Text);
-            SqlDataAdapter adap = new SqlDataAdapter(kurumsalsatis);
-            DataTable dt = new DataTable();
-            adap.Fill(dt);
-            gridKurumsal.DataSource = dt;
-            baglan.baglanti().Close();
+            try
+            {
+                SqlCommand kurumsalsatis = new SqlCommand("SELECT URUNAD, TBLFIRMAHAREKETLER.ADET,(TBLPERSONELLER.AD+' '+SOYAD) AS 'PERSONEL', TBLFIRMALAR.AD AS 'FİRMA', FIYAT,TOPLAM,FATURAID,TARIH FROM TBLFIRMAHAREKETLER INNER JOIN TBLURUNLER ON TBLFIRMAHAREKETLER.URUNID=TBLURUNLER.ID INNER JOIN TBLPERSONELLER ON TBLFIRMAHAREKETLER.PERSONEL=TBLPERSONELLER.ID INNER JOIN TBLFIRMALAR ON TBLFIRMAHAREKETLER.FIRMA=TBLFIRMALAR.ID where TBLPERSONELLER.AD=@p1", baglan.baglanti());
+                kurumsalsatis.Parameters.AddWithValue("@p1", lblAd.Text);
+                SqlDataAdapter adap = new SqlDataAdapter(kurumsalsatis);
+                DataTable dt = new DataTable();
+                adap.Fill(dt);
+                gridKurumsal.DataSource = dt;
+                baglan.baglanti().Close();
+            }
+            catch (SqlException ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         public void PersonelBireyselSatis()
         {
-            SqlCommand bireyselsatis = new SqlCommand("SELECT URUNAD, TBLMUSTERIHAREKETLER.ADET, (TBLPERSONELLER.AD+' '+TBLPERSONELLER.SOYAD) AS 'PERSONEL', (TBLMUSTERILER.AD+' '+TBLMUSTERILER.SOYAD) AS 'MÜŞTERİ',FIYAT,TOPLAM,TARIH FROM TBLMUSTERIHAREKETLER INNER JOIN TBLURUNLER ON TBLMUSTERIHAREKETLER.URUNID=TBLURUNLER.ID INNER JOIN TBLPERSONELLER ON TBLMUSTERIHAREKETLER.PERSONEL=TBLPERSONELLER.ID INNER JOIN TBLMUSTERILER ON TBLMUSTERIHAREKETLER.MUSTERI=TBLMUSTERILER.ID where TBLPERSONELLER.AD=@p1", baglan.baglanti());
-            bireyselsatis.Parameters.AddWithValue("@p1", lblAd.Text);
-            SqlDataAdapter adap = new SqlDataAdapter(bireyselsatis);
-            DataTable dt = new DataTable();
-            adap.Fill(dt);
-            gridBireysel.DataSource = dt;
-            baglan.baglanti().Close();
+            try
+            {
+                SqlCommand bireyselsatis = new SqlCommand("SELECT URUNAD, TBLMUSTERIHAREKETLER.ADET, (TBLPERSONELLER.AD+' '+TBLPERSONELLER.SOYAD) AS 'PERSONEL', (TBLMUSTERILER.AD+' '+TBLMUSTERILER.SOYAD) AS 'MÜŞTERİ',FIYAT,TOPLAM,TARIH FROM TBLMUSTERIHAREKETLER INNER JOIN TBLURUNLER ON TBLMUSTERIHAREKETLER.URUNID=TBLURUNLER.ID INNER JOIN TBLPERSONELLER ON TBLMUSTERIHAREKETLER.PERSONEL=TBLPERSONELLER.ID INNER JOIN TBLMUSTERILER ON TBLMUSTERIHAREKETLER.MUSTERI=TBLMUSTERILER.ID where TBLPERSONELLER.AD=@p1", baglan.baglanti());
+                bireyselsatis.Parameters.AddWithValue("@p1", lblAd.Text);
+                SqlDataAdapter adap = new SqlDataAdapter(bireyselsatis);
+                DataTable dt = new DataTable();
+                adap.Fill(dt);
+                gridBireysel.DataSource = dt;
+                baglan.baglanti().Close();
+            }
+            catch (SqlException ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void FrmPersonelDetay_Load(object sender, EventArgs e)
